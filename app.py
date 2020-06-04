@@ -1,7 +1,11 @@
 # https://realpython.com/flask-by-example-part-1-project-setup/ #
 
+import os
 from flask import Flask
+
+
 app = Flask(__name__)
+app.config.from_object(os.environ['APP_SETTINGS'])
 
 
 @app.route('/')
